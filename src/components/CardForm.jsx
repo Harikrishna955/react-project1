@@ -86,7 +86,7 @@ export default function CardForm ({ setFormData, formData, animateSlider }) {
 				<p className='info info--hidden' aria-live='polite'></p>
 			</div>
 
-			<button type='submit' className='btn-submit btn-primary'>Confirm</button>
+			<button type='submit' className='btn-submit btn-primary'>Confirm</button><br/>
 			<button type='reset' className='btn-primary' onClick={resetForm}>RESEt</button>
 		</form>
 	)
