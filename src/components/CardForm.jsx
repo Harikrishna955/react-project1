@@ -41,7 +41,7 @@ export default function CardForm ({ setFormData, formData, animateSlider }) {
 		}
 
 		if (formData.cvc) {
-			if (formData.cvc.length < 3) {
+			if (formData.cvc.length < 4) {
 				handleError('cvc', 'CVC is too short')
 			} else handleError('cvc', '', 'remove')
 		}
@@ -49,7 +49,10 @@ export default function CardForm ({ setFormData, formData, animateSlider }) {
 		if (!formData.mm) handleError('mm', 'Can`t be blank')
 		if (!formData.yy) handleError('yy', 'Can`t be blank')
 
-		if (document.querySelectorAll('.input--error').length === 0) animateSlider(true)
+		if (document.querySelectorAll('.input--error').length === 0) animateSlider(false)
+	}
+	const resetForm = () => {
+		setFormData({ name: null, number: null, mm: null, yy: null, cvc: null })
 	}
 
 	return (
@@ -84,6 +87,7 @@ export default function CardForm ({ setFormData, formData, animateSlider }) {
 			</div>
 
 			<button type='submit' className='btn-submit btn-primary'>Confirm</button>
+			<button className='btn-primary' onClick={resetForm}>Continue</button>
 		</form>
 	)
 }

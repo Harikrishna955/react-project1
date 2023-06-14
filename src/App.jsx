@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import CardThanks from './components/CardThanks'
 import CardForm from './components/CardForm'
 import CardCredit from './components/CardCredit'
 import './styles/App.css'
@@ -27,7 +26,7 @@ function App () {
 			<main className='cardOverflow'>
 				<div>
 					{validate
-						? <CardThanks setFormData={setFormData} animateSlider={animateSlider} />
+						? <CardForm setFormData={setFormData} animateSlider={animateSlider} />
 						: <CardForm setFormData={setFormData} animateSlider={animateSlider} formData={formData} />
 					}
 				</div>
