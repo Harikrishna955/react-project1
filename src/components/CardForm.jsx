@@ -6,7 +6,7 @@ export default function CardForm ({ setFormData, formData, animateSlider }) {
 		if (name === 'number') e.target.value = value.replace(/\s/g, '').replace(/(.{4})/g, '$1 ').trim().slice(0, 19)
 		if (name === 'mm' || name === 'yy') e.target.value = value.toString().replace(/[^0-9]/g, '').substring(0, 2)
 		if (name === 'mm' && value > 12) e.target.value = '12'
-		if (name === 'cvc') e.target.value = value.substring(0, 4)
+		if (name === 'cvc') e.target.value = value.substring(0, 3)
 
 		setFormData({ ...formData, [name]: e.target.value })
 	}
@@ -41,7 +41,7 @@ export default function CardForm ({ setFormData, formData, animateSlider }) {
 		}
 
 		if (formData.cvc) {
-			if (formData.cvc.length < 4) {
+			if (formData.cvc.length < 3) {
 				handleError('cvc', 'CVC is too short')
 			} else handleError('cvc', '', 'remove')
 		}
